@@ -1,0 +1,17 @@
+image:
+  repository: inbucket/inbucket
+  pullPolicy: IfNotPresent
+  tag: "main@sha256:c8f1f202ad3c3e294da269f7a1dea9f23d7f7243c8a37d55b222db09c019ef96"
+
+service:
+  name: mailserver
+  type: ClusterIP
+  port: 80
+
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 2Gi
+
+release:
+  namespace: mail
